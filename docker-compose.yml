@@ -1,0 +1,9 @@
+version: '2'
+services:
+  addon-packager-proxy:
+    build: .
+    image: addon-packager-proxy
+    env_file: .env
+    ports:
+      - "36676:36676"
+    restart: always
