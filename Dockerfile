@@ -1,6 +1,6 @@
 FROM node:7-alpine
 
-RUN apt-get update && apt-get install -y git
+RUN apk-install git
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
