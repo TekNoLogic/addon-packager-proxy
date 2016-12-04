@@ -4,6 +4,7 @@ services:
     build: .
     image: addon-packager-proxy
     env_file: .env
+    network_mode: "host"
     ports:
       - "36676:80"
     restart: always
