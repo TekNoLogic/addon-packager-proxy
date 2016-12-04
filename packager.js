@@ -40,9 +40,11 @@ function handleErrors(err, res, body){
 }
 
 var curseURL = 'https://wow.curseforge.com';
+var wowaceURL = 'https://www.wowace.com';
+
 
 function queryCurse(details, interval){
-	request(curseURL + '/projects/' + details.curse + '/files', function(err, res, body){
+	request(wowaceURL + '/projects/' + details.curse + '/files', function(err, res, body){
 		if(!handleErrors(err, res))
 			return;
 
@@ -53,7 +55,7 @@ function queryCurse(details, interval){
 		Log.info(Strings.CURSE_TAG_FOUND);
 
 		var fileName = details.path + '-' + details.tag + '.zip'
-		request(curseURL + '/projects/' + details.curse + '/files/' + fileID[1] + '/download').on('response', function(res){
+		request(wowaceURL + '/projects/' + details.curse + '/files/' + fileID[1] + '/download').on('response', function(res){
 			if(!handleErrors(null, res))
 				return;
 
