@@ -5,5 +5,5 @@ services:
     image: addon-packager-proxy
     env_file: .env
     ports:
-      - "36676:36676"
+      - "36676:80"
     restart: always
